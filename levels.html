@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Master Evolution Levels</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <h1>Evolution of the Scrum Master</h1>
+            <p class="subtitle">Explore the different maturity levels of a Scrum Master</p>
+            
+            <p class="credits">Based on "Evolution of the Scrum Master" by Ron Eringa - <a href="https://roneringa.com/evolution-scrum-master/" target="_blank">Read the original article</a></p>
+
+            <a href="index.html" class="back-link">← Back to Assessment</a>
+
+            <div id="levelsContainer" class="levels-container">
+                <!-- Levels will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { scrumMasterLevels } from './levels.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const levelsContainer = document.getElementById('levelsContainer');
+            
+            // Updated image extensions to jpg
+            const levelImages = {
+                clerk: 'clerk.jpg',
+                puppetMaster: 'puppet-master.jpg',
+                organizer: 'organizer.jpg',
+                coach: 'coach.jpg',
+                advisor: 'advisor.jpg',
+                expert: 'expert.jpg'
+            };
+            
+            Object.entries(scrumMasterLevels).forEach(([key, level]) => {
+                const levelCard = document.createElement('div');
+                levelCard.className = 'level-card';
+                levelCard.innerHTML = `
+                    <div class="level-content">
+                        <div class="level-image">
+                            <img 
+                                src="images/${levelImages[key]}" 
+                                alt="${level.title}"
+                                onError="this.onerror=null; this.src='images/placeholder.jpg'"
+                                class="level-avatar"
+                            >
+                        </div>
+                        <div class="level-text">
+                            <h3>${level.title}</h3>
+                            <p>${level.description}</p>
+                        </div>
+                    </div>
+                `;
+                levelsContainer.appendChild(levelCard);
+            });
+        });
+    </script>
+
+    <style>
+        /* Styles remain the same */
+        .level-card {
+            display: flex;
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .level-content {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .level-image {
+            flex: 0 0 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .level-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            background-color: #f8f9fa;
+        }
+
+        .level-text {
+            flex: 1;
+        }
+
+        .level-text h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .level-text p {
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            margin: 20px 0;
+            transition: transform 0.2s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .levels-container {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .level-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .level-image {
+                flex: 0 0 150px;
+                margin-bottom: 20px;
+            }
+
+            .level-avatar {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</body>
+</html>

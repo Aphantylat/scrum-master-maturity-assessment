@@ -1,0 +1,456 @@
+/* styles.css */
+
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f39c12;
+    --tertiary-color: #2ecc71;
+    --background-color: #faf8f1;
+    --text-color: #2c3e50;
+    --border-radius: 20px;
+    --button-color: #e74c3c;
+    --error-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+/* Base styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Quiz container styles */
+.quiz-container, .results-container {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Typography */
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 1.8em;
+    margin: 25px 0 15px 0;
+}
+
+h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+    font-size: 1.3em;
+    margin: 15px 0;
+}
+
+.subtitle {
+    text-align: left;
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* Intro text styles */
+.intro-text {
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid var(--primary-color);
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.intro-text ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.intro-text li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.intro-text strong {
+    color: var(--primary-color);
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+/* Question styles */
+.question-group {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: var(--border-radius);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.radio-group label:hover {
+    transform: translateX(10px);
+    border-color: var(--primary-color);
+    background-color: rgba(74, 144, 226, 0.1);
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.nav-btn, .submit-btn, .restart-btn, .view-levels-btn, .share-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.submit-btn {
+    background-color: var(--success-color);
+    color: white;
+    font-weight: bold;
+}
+
+.restart-btn, .view-levels-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+
+.nav-btn:hover, .submit-btn:hover, .restart-btn:hover, .view-levels-btn:hover, .share-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Results styles */
+.results-container {
+    text-align: center;
+}
+
+.result-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.result-image {
+    flex: 1;
+}
+
+.level-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.level-avatar:hover {
+    transform: scale(1.05);
+}
+
+.result-text {
+    flex: 2;
+    text-align: left;
+}
+
+/* Sharing buttons */
+.sharing-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.share-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.linkedin-btn {
+    background-color: #0077b5;
+    color: white;
+}
+
+.feedback-btn {
+    background-color: var(--tertiary-color);
+    color: white;
+}
+
+.share-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Feedback dialog */
+.feedback-dialog {
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    max-width: 400px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.dialog-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Credits */
+.credits {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    cursor: help;
+    font-size: 0.9em;
+    vertical-align: middle;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-weight: normal;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* Category tag */
+.category-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 8px;
+    background-color: rgba(74, 144, 226, 0.1);
+    color: var(--primary-color);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    body {
+        /* System font stack for better readability on mobile */
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+            Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .subtitle {
+        font-size: 1.1em;
+    }
+
+    .intro-text {
+        font-size: 1em;
+    }
+
+    .question-group {
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .radio-group label {
+        padding: 10px;
+        font-size: 1em;
+    }
+    
+    .result-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .result-text {
+        text-align: center;
+    }
+    
+    .navigation {
+        flex-direction: column;
+    }
+
+    .nav-btn, .submit-btn, .restart-btn, .view-levels-btn {
+        width: 100%;
+    }
+
+    .level-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sharing-buttons {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tooltip .tooltip-text {
+        width: 160px;
+        margin-left: -80px;
+    }
+}
+
+.result-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .result-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

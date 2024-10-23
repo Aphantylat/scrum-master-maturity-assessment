@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Park Scrum Master Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-container">
+            <h1>What Kind of Scrum Master Are You?</h1>
+            <p class="subtitle">Take this totally awesome assessment to find out your Scrum Master maturity level!</p>
+
+            <div class="intro-text">
+                <p>Being a Scrum Master is a journey of continuous growth and learning. This assessment, inspired by South Park's unique style, will help you understand where you are on this exciting path. But remember - it's not about reaching a specific destination; it's about the lessons you learn along the way!</p>
+
+                <p>Before you start, keep these important points in mind:</p>
+                <ul>
+                    <li>This assessment is a guide for personal development, not a strict evaluation</li>
+                    <li>Focus on identifying areas for growth rather than achieving a specific level</li>
+                    <li>Different situations may require different approaches - flexibility is key</li>
+                    <li>Progress isn't always linear - you may show characteristics of multiple levels</li>
+                    <li>Use your results to create a personal development plan</li>
+                </ul>
+
+                <p><strong>Remember:</strong> The goal isn't to race to the "Expert" level, but to continuously improve and provide the most value to your organization in your current context.</p>
+            </div>
+            
+            <p class="credits">Based on "Evolution of the Scrum Master" by Ron Eringa - <a href="https://roneringa.com/evolution-scrum-master/" target="_blank">Read the original article</a></p>
+
+            <div class="progress-container">
+                <div class="progress-bar" style="width: 0%"></div>
+                <div class="progress-text">0%</div>
+            </div>
+            
+            <form id="scrumQuiz">
+                <div class="sections" id="questionsContainer">
+                    <!-- Questions will be dynamically inserted here -->
+                </div>
+
+                <div class="navigation">
+                    <button type="button" id="prevBtn" class="nav-btn" style="display: none;">Previous</button>
+                    <button type="button" id="nextBtn" class="nav-btn">Next</button>
+                    <button type="submit" id="submitBtn" class="submit-btn" style="display: none;">Show My Result!</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="results" class="results-container" style="display: none;">
+            <h2>You Are A...</h2>
+            <div class="result-content">
+                <div class="result-image">
+                    <img id="resultImage" src="" alt="" class="level-avatar">
+                </div>
+                <div class="result-text">
+                    <h3 id="resultTitle"></h3>
+                    <div id="resultDescription"></div>
+                </div>
+            </div>
+
+            <div class="sharing-buttons">
+                <button type="button" id="shareLinkedIn" class="share-btn linkedin-btn">
+                    <svg class="share-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    Share on LinkedIn
+                </button>
+                
+                <button type="button" id="shareFeedback" class="share-btn feedback-btn">
+                    Share with Creator
+                </button>
+            </div>
+
+            <dialog id="feedbackDialog" class="feedback-dialog">
+			    <form id="feedbackForm" method="dialog">
+			        <h3>Share Your Results</h3>
+			        <p>Help improve the assessment by sharing your results! I'll use the anonymous statistics to share interesting insights about Scrum Master maturity levels on LinkedIn. Your personal information (name/email) is optional and will only be used if you'd like to receive the insights directly.</p>
+			        
+			        <div class="form-group">
+			            <label for="name">Name (optional):</label>
+			            <input type="text" id="name" name="name" placeholder="Your name">
+			        </div>
+			        
+			        <div class="form-group">
+			            <label for="email">Email (optional):</label>
+			            <input type="email" id="email" name="email" placeholder="your@email.com">
+			        </div>
+
+			        <div class="dialog-buttons">
+			            <button type="submit" class="submit-btn">Share Results</button>
+			            <button type="button" class="cancel-btn" onclick="feedbackDialog.close()">Cancel</button>
+			        </div>
+			    </form>
+			</dialog>
+            <div class="result-actions">
+                <button type="button" class="view-levels-btn" onclick="window.location.href='levels.html'">View All Levels</button>
+                <button type="button" class="restart-btn" onclick="location.reload();">Take The Quiz Again!</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
